@@ -53,7 +53,43 @@ function renderFooter() {
   `;
 }
 
+function setupLightbox() {
+  const targets = document.querySelectorAll(".gallery-item img, .news-card img");
+  if (!targets.length) return;
+
+  const overlay = document.createElement("div");
+  overlay.className = "lightbox-overlay";
+  overlay.hidden = true;
+  overlay.innerHTML = `
+    <button class="lightbox-close" type="button" aria-label="닫기">&times;</button>
+    <img alt="" />
+  `;
+  document.body.appendChild(overlay);
+  const overlayImg = overlay.querySelector("img");
+
+  function open(src, alt) {
+    overlayImg.src = src;
+    overlayImg.alt = alt || "";
+    overlay.hidden = false;
+  }
+
+  function close() {
+    overlay.hidden = true;
+    overlayImg.src = "";
+  }
+
+  targets.forEach((img) => {
+    img.addEventListener("click", () => open(img.currentSrc || img.src, img.alt));
+  });
+
+  overlay.addEventListener("click", close);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !overlay.hidden) close();
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderHeader();
   renderFooter();
+  setupLightbox();
 });
