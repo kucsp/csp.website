@@ -388,6 +388,55 @@ section + section {
   margin-top: 40px;
 }
 
+.grad-list summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.grad-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.grad-list summary h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0;
+}
+
+.grad-list summary h3::after {
+  content: "\25B8";
+  color: var(--color-text-faint);
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+}
+
+.grad-list[open] summary h3::after {
+  transform: rotate(90deg);
+}
+
+.grad-count {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--color-text-faint);
+}
+
+.grad-names {
+  margin: 14px 0 0;
+  columns: 2;
+  column-gap: 24px;
+  font-size: 0.88rem;
+  line-height: 1.9;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 560px) {
+  .grad-names {
+    columns: 1;
+  }
+}
+
 /* Publications ------------------------------------------------------------ */
 
 .pub-year {
