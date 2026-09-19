@@ -24,7 +24,7 @@ function renderHeader() {
   mount.innerHTML = `
     <div class="nav-bar">
       <a class="brand" href="index.html">
-        <img src="assets/images/logo.svg" alt="" />
+        <img src="assets/images/logo.png" alt="" />
         <span>CSP Lab</span>
       </a>
       <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">☰</button>
@@ -48,7 +48,7 @@ function renderFooter() {
   mount.innerHTML = `
     <div class="container">
       <p>&copy; ${year} CSP Lab. All rights reserved.</p>
-      <p>[학교명] [학과명] · [주소를 입력하세요]</p>
+      <p>고려대학교 심리학부 문화·사회·성격심리 전공 (CSP Lab) · 서울특별시 성북구 안암로 145 법학관(구관)</p>
     </div>
   `;
 }
