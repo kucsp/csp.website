@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { href: "people.html", label: "구성원", page: "people" },
   { href: "publications.html", label: "논문", page: "publications" },
   { href: "news.html", label: "소식", page: "news" },
-  { href: "contact.html", label: "연락처", page: "contact" },
 ];
 
 function renderHeader() {
